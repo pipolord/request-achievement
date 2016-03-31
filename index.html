@@ -8,19 +8,105 @@
 <script src="js/Achievement.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
 
+<!-- CSS MAIN -->
+<link rel="stylesheet" href="css/main.css">
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+<!-- Librarie JS WOW HEAD -->
+<script type="text/javascript" src="http://wow.zamimg.com/widgets/power.js"></script><script>var wowhead_tooltips = { "colorlinks": true, "iconizelinks": true, "renamelinks": true }</script>
   </head>
 
   <!-- 3. Display the application -->
   <body>
-      <div ng-app="achievement" >
+    <div ng-app="achievement" >
         <div ng-controller="achievementController">
-          <p>Rechercher un haut fait: <input type="text" ng-model="someVal" ng-minlength="3" ng-required="1" ng-change="seekAchievement()" ng-Trim="false"/></p>
-          <img src="images/loader.gif" alt="Loader" id="loader">
-          <p ng-repeat="resultsAchievement in resultsAchievements">
-            {{resultsAchievement.title}} - {{resultsAchievement.description}}
-          </p>
+
+				<nav class="navbar navbar-default" role="navigation">
+				    <div class="navbar-header">
+				        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+				            <span class="sr-only">Toggle navigation</span>
+				            <span class="icon-bar"></span>
+				            <span class="icon-bar"></span>
+				            <span class="icon-bar"></span>
+				        </button>
+				        
+				        <a class="navbar-brand" href="#"><span class="glyphicon glyphicon-list"></span> Request Achievement</a>
+				    </div>
+				    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				        <ul class="nav navbar-nav">
+				            <li class="active"><a href="#">Account</a></li>
+				            <li><a href="#">Asks</a></li>
+				            <li class="dropdown">
+				                <a href="#" class="dropdown-toggle" data-toggle="dropdown">About <b class="caret"></b></a>
+				                <ul class="dropdown-menu">
+				                    <li><a href="#">Action</a></li>
+				                    <li><a href="#">Another action</a></li>
+				                    <li><a href="#">Something else here</a></li>
+				                    <li class="divider"></li>
+				                    <li><a href="#">Separated link</a></li>
+				                    <li class="divider"></li>                    
+				                </ul>
+				            </li>
+				        </ul>
+				        <div class="col-sm-3 col-md-3 pull-right">
+				          
+				        </div>        
+				    </div>
+				</nav>
+			
+          
+		       
+				<section class="content">
+			
+			<div class="col-md-8 col-md-offset-2">
+				<div class="panel panel-default">
+					<div class="panel-body">
+						 <div class="col-md-12 ">
+		    			<img src="images/loader.gif" alt="Loader" id="loader">
+		           			 <div id="custom-search-input">
+		                			<div class="input-group col-md-12">
+		                   	 		<input type="text" class="form-control" placeholder="Search an Achievement !" ng-model="someVal" ng-minlength="3" ng-required="1" ng-change="seekAchievement()" ng-Trim="false"  />
+		               		 		</div>
+		           			 </div>
+		      			  </div>
+
+						<div class="table-container" >
+							<table class="table table-filter">
+								<tbody>
+									<tr data-status="pagado" ng-repeat="resultsAchievement in resultsAchievements">
+										<td>
+											<div class="media">
+												<a href="#" rel=/achievement={{resultsAchievement.id}} class="pull-left">
+													<img src=http://media.blizzard.com/wow/icons/56/{{resultsAchievement.icon}}.jpg class="media-photo">
+												</a>
+												<div class="media-body">
+													<span class="media-meta pull-right">Voir les groupes</span>
+													<h4 class="title">
+														{{resultsAchievement.title}}
+														<span class="pull-right pagado">2 groupes constitués</span>
+													</h4>
+													<p class="summary">{{resultsAchievement.description}}</p>
+												</div>
+											</div>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		
         </div>
       </div>
+
   </body>
 
 </html>
