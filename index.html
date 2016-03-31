@@ -1,0 +1,23 @@
+<html>
+  <head>
+    <title>Angular 2 QuickStart</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
+<script src="js/Achievement.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+
+  </head>
+
+  <!-- 3. Display the application -->
+  <body>
+      <div ng-app="achievement" >
+        <div ng-controller="achievementController">
+          <p>Rechercher un haut fait: <input type="text" ng-model="someVal" ng-change="seekAchievement()" ng-Trim="false" /> </p>
+          <p >{{resultsAchievement}}</p>
+        </div>
+      </div>
+  </body>
+
+</html>
