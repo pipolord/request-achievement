@@ -1,1 +1,1 @@
-Pipo test
+Pipo
