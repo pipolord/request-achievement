@@ -15,7 +15,9 @@
       <div ng-app="achievement" >
         <div ng-controller="achievementController">
           <p>Rechercher un haut fait: <input type="text" ng-model="someVal" ng-change="seekAchievement()" ng-Trim="false" /> </p>
-          <p >{{resultsAchievement}}</p>
+          <p ng-repeat="resultsAchievement in resultsAchievements">
+            {{resultsAchievement.title}} - {{resultsAchievement.description}}
+          </p>
         </div>
       </div>
   </body>
