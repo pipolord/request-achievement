@@ -1,22 +1,13 @@
 var mongoose = require("mongoose");
-var bodyParser = require("body-parser");
-var urlEncodedParser = bodyParser.urlencoded({extended : false});
+var bodyParser = require('body-parser'); // Charge le middleware de gestion des paramÃƒÂ¨tres
+var urlencodedParser = bodyParser.urlencoded({ extended: false });
 
-/*module.export = function(app){*/
-	var groupSchema = {
-		date : String, 
-		recompense: String
-	};
-	var group = mongoose.model("groups", groupSchema, "groups");
-	console.log("chat");
-	group.create({date:"prout"}, function (err, result) { 
-		console.log("chat");
-		if (err) {
-			return next(err);
-		}
-		res.json(result); 
-		console.log("bite");
+module.exports = function(app){
+
+
+//LISTE DES GROUPES
+	app.get('/groups', function (req, res) {
+	        res.json([{id: "555", title : "Goulet de chanteguerre", date : "15/05/2016", recompense: "10po"},
+										{id: "575", title : "S'enforcer une banane dans le cul", date : "01/04/2016", recompense: "Moustafa"}]);
 	});
-
-
-/*}*/
+}
