@@ -7,7 +7,10 @@ var urlencodedParser = bodyParser.urlencoded({ extended: false });
 mongoose.connect('mongodb://192.168.1.13/requestAchievement');
 
 var app = express();
-app.use(bodyParser.json());
+
+var cors = require('cors');
+app.use(cors());
+app.use(cors({ origin: 'null', credentials: true }));
 
 require('./routes/groupAchievementRoutes')(app);
 

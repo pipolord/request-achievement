@@ -12,7 +12,7 @@ module.exports = function(app){
 	    dateCreate 		: Date,
 	    reward 				: String,
 	    comments 			: String,
-			vocal 				: Boolean,
+			vocal 				: String,
 			status				: Number
 	};
 
