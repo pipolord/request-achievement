@@ -22,6 +22,16 @@
 <script type="text/javascript" src="http://wow.zamimg.com/widgets/power.js"></script><script>var wowhead_tooltips = { "colorlinks": true, "iconizelinks": true, "renamelinks": true }</script>
   </head>
 
+<!-- Bootstrap select -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/css/bootstrap-select.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/js/bootstrap-select.js"></script>
+
+<script type="text/javascript">
+$(function () {
+    $('#datetimepicker1').datetimepicker();
+});
+</script>
+
   <!-- 3. Display the application -->
   <body>
     <div ng-app="achievement" >
@@ -35,8 +45,8 @@
 				            <span class="icon-bar"></span>
 				            <span class="icon-bar"></span>
 				        </button>
-				        
-				        <a class="navbar-brand title-achievement" href="#"><span class="glyphicon glyphicon-list"></span> Request Achievement</a>
+
+				        <a class="navbar-brand title-achievement" href="#"><span class=""><img class="aicon" src="images/Achievement_icon.png" alt="" /></span> Request Achievement</a>
 				    </div>
 				    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 				        <ul class="nav navbar-nav">
@@ -50,20 +60,20 @@
 				                    <li><a href="#">Something else here</a></li>
 				                    <li class="divider"></li>
 				                    <li><a href="#">Separated link</a></li>
-				                    <li class="divider"></li>                    
+				                    <li class="divider"></li>
 				                </ul>
 				            </li>
 				        </ul>
 				        <div class="col-sm-3 col-md-3 pull-right">
-				          
-				        </div>        
+
+				        </div>
 				    </div>
 				</nav>
-			
-          
-		       
+
+
+
 				<section class="content">
-			
+
 			<div class="col-md-8 col-md-offset-2">
 				<div class="panel panel-default">
 					<div class="panel-body">
@@ -86,10 +96,11 @@
 													<img src=http://media.blizzard.com/wow/icons/56/{{resultsAchievement.icon}}.jpg class="media-photo">
 												</a>
 												<div class="media-body">
-													<span class="media-meta pull-right">Voir les groupes</span>
+													<span class="media-meta pull-right"> <button type="button" data-toggle="modal" data-target="#squarespaceModal" class="btn btn-warning text-uppercase btn-sm"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span> Request</button></span>
+
 													<h4 class="title">
 														{{resultsAchievement.title}}
-														<span class="pull-right pagado">2 groupes constitués</span>
+														<!-- <span class="pull-right pagado">2 groupes constitués</span> -->
 													</h4>
 													<p class="summary">{{resultsAchievement.description}}</p>
 												</div>
@@ -103,10 +114,91 @@
 				</div>
 			</div>
 		</section>
-		
         </div>
       </div>
+      <!-- Ligne de mon modal -->
+      <div class="modal fade" id="squarespaceModal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header modal-header-info">
+            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+            <h3 class="modal-title modal-title-color" id="lineModalLabel">You need some help to realize this achievement ?</h3>
+          </div>
+          <div class="modal-body">
+                  <!-- contenu de mon modal -->
+            <form>
+                      <!-- Section pour selectionner la date -->
+                      <label for="selectdate">Select Date</label>
+                            <div class="form-group">
+                                <div class='input-group date' id='datetimepicker1'>
+                                    <input type='text' class="form-control" />
+                                    <span class="input-group-addon">
+                                        <span class="glyphicon glyphicon-calendar"></span>
+                                    </span>
+                                </div>
+                            </div>
 
+                      <!-- Section pour selectionner le rôle -->
+                      <label for="exampleInputEmail1">Select a rôle</label>
+                      <div class="form-group text-center">
+                          <div class="btn-group " data-toggle="buttons">
+                                <label class="btn btn-primary">
+                                    <input type="checkbox" autocomplete="off" checked>
+                                    <span class="glyphicon glyphicon-ok opa"></span>
+                                     Tank
+                                    <img class="iconopa" src="images/tank.png" alt="" />
+                                </label>
+                                <label class="btn btn-success">
+                                    <input type="checkbox" autocomplete="off">
+                                    <span class="glyphicon glyphicon-ok opa"></span>
+                                    Healer
+                                    <img class="iconopa" src="images/healer.png" alt="" />
+                                </label>
+                                <label class="btn btn-danger">
+                                    <input type="checkbox" autocomplete="off">
+                                    <span class="glyphicon glyphicon-ok opa"></span>
+                                    Damage
+                                    <img class="iconopa" src="images/damage.png" alt="" />
+                                </label>
+                          </div>
+                      </div>
+                      <!-- Section pour la récompense -->
+
+                      <div class="form-group">
+                            <label for="sel1">Specify the reward</label>
+                            <select class="form-control" id="sel1">
+                              <option>Gold In game</option>
+                              <option>Mount</option>
+                              <option>Battle pet</option>
+                              <option>Other</option>
+                              <option>No, just a "thanks"</option>
+                            </select>
+                      </div>
+                      <!-- Section pour le vocal -->
+                      <div class="form-group">
+                            <label for="sel1">Use vocal ?</label>
+                            <select class="form-control" id="sel1">
+                              <option>Skype</option>
+                              <option>Teamspeak</option>
+                              <option>Mumble</option>
+                              <option>Other</option>
+                              <option>No</option>
+                            </select>
+                      </div>
+                      <div class="form-group">
+                            <label for="comment">Comment :</label>
+                            <textarea class="form-control" rows="5" id="comment"></textarea>
+                    </div>
+                    </form>
+                </div><!-- Fin du contenu de mon modal -->
+                    <!-- Footer de mon modal -->
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-warning pull-right" data-dismiss="modal"><i class="glyphicon glyphicon-log-in"></i> Request !</button>
+                    </div>
+        </div>
+        </div>
+      </div>
   </body>
 
 </html>
