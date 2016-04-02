@@ -6,13 +6,14 @@ module.exports = function(app){
 	app.use(bodyParser.json());
 
 	var groupSchema = {
-	    idAchievement:String,
-	    idAuthor:String,
-	    dateBegin : Date,
-	    dateEnd : Date,
-	    reward : String,
-	    comments : String,
-			vocal : Boolean,
+	    idAchievement	: String,
+	    idAuthor			: String,
+	    dateBegin 		: Date,
+	    dateCreate 		: Date,
+	    reward 				: String,
+	    comments 			: String,
+			vocal 				: Boolean,
+			status				: Number
 	};
 
 	var Group = mongoose.model('groups', groupSchema);
