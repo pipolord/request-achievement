@@ -8,11 +8,11 @@
 <script src="js/Achievement.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
 
-
-<!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 <!-- CSS MAIN -->
 <link rel="stylesheet" href="css/main.css">
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
 <!-- Optional theme -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
 
@@ -37,19 +37,27 @@ $(function () {
   });
 </script>
 <script type="text/javascript">
+
   var positions = ["top","center","bottom"];
+
   var selected = Math.floor(Math.random()*3);
+
   console.log(selected);
+
   $(document).ready(function() {
+
   document.getElementById('#navbar-custom').style.backgroundPosition = positions[selected];
+
 });
+
 </script>
+ 
   <!-- 3. Display the application -->
   <body>
     <div ng-app="achievement" >
         <div ng-controller="achievementController">
 
-				<nav id="#navbar-custom" class="navbar navbar-custom" role="navigation">
+				<nav class="navbar navbar-default" role="navigation">
 				    <div class="navbar-header">
 				        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
 				            <span class="sr-only">Toggle navigation</span>
@@ -63,12 +71,16 @@ $(function () {
 				    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 				        <ul class="nav navbar-nav">
 				            <li class="active"><a href="#">Account</a></li>
-				            <li><a href="#">Groups</a></li>
+				            <li><a href="#">Asks</a></li>
 				            <li class="dropdown">
 				                <a href="#" class="dropdown-toggle" data-toggle="dropdown">About <b class="caret"></b></a>
 				                <ul class="dropdown-menu">
-				                    <li><a href="#">Some help ?</a></li>
-				                    <li><a href="#">Dev Team</a></li>
+				                    <li><a href="#">Action</a></li>
+				                    <li><a href="#">Another action</a></li>
+				                    <li><a href="#">Something else here</a></li>
+				                    <li class="divider"></li>
+				                    <li><a href="#">Separated link</a></li>
+				                    <li class="divider"></li>
 				                </ul>
 				            </li>
 				        </ul>
@@ -104,9 +116,7 @@ $(function () {
 													<img src=http://media.blizzard.com/wow/icons/56/{{resultsAchievement.icon}}.jpg class="media-photo">
 												</a>
 												<div class="media-body">
-													<span class="media-meta pull-right">
-                            <button type="button" data-toggle="modal" data-target="#squarespaceModal" class="btn btn-success text-uppercase btn-sm"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> 1 group UP !</button>
-                            <button type="button" data-toggle="modal" data-target="#squarespaceModal" class="btn btn-warning text-uppercase btn-sm"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span> Request for Help !</button></span>
+													<span class="media-meta pull-right"> <button type="button" data-toggle="modal" data-target="#squarespaceModal" class="btn btn-warning text-uppercase btn-sm"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span> Request</button></span>
 
 													<h4 class="title">
 														{{resultsAchievement.title}}
@@ -181,7 +191,7 @@ $(function () {
                               <option>Mount</option>
                               <option>Battle pet</option>
                               <option>Other</option>
-                              <option>No rewards, just a "thanks"</option>
+                              <option>No, just a "thanks"</option>
                             </select>
                       </div>
                       <!-- Section pour le vocal -->
@@ -192,7 +202,7 @@ $(function () {
                               <option>Teamspeak</option>
                               <option>Mumble</option>
                               <option>Other</option>
-                              <option>No vocal</option>
+                              <option>No</option>
                             </select>
                       </div>
                       <div class="form-group">
@@ -204,7 +214,6 @@ $(function () {
                     <!-- Footer de mon modal -->
                     <div class="modal-footer">
                         <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-
                         <button type="submit" class="btn btn-warning pull-right" data-dismiss="modal"><i class="glyphicon glyphicon-log-in"></i> Request !</button>
                     </div>
         </div>
