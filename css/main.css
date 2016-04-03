@@ -148,7 +148,7 @@ body {
     color: #F0AD4E;
 }
 .table-filter .media-photo {
-    width: 35px;
+  /*  width: 35px; */
 }
 .table-filter .media-body {
     /*display: block; */
@@ -243,7 +243,7 @@ body {
 
 .navbar-custom {
   color: #fff;
-  background-image: url('../images/nav/test2.jpg');
+  background-image: url('../images/nav/test7.jpg');
   background-repeat: repeat-x;
   opacity: 0.9;
   z-index:100;
