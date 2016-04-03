@@ -193,14 +193,9 @@ $(document).ready(function() {
 												</a>
 												<div class="media-body">
                           <span class="media-meta pull-right">
-                            <button type="button" data-toggle="modal" data-target="#squarespaceModal" ng-click="newGroupIdAchievement(resultsAchievement.id)" class="btn btn-success text-uppercase btn-sm">
-                              <span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span>
-                              Request
-                            </button>
 
-                            <button type="button" ng-click="getGroups(resultsAchievement.id)" class="btn btn-info text-uppercase btn-sm">
-                              <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
-                              Groups
+                            <button type="button" ng-click="getGroups(resultsAchievement.id)" class="btn btn-success text-uppercase btn-sm">
+                              +
                             </button></span>
 													<h4 class="title">
 														{{resultsAchievement.title}}
@@ -212,12 +207,12 @@ $(document).ready(function() {
                       <div ng-repeat="group in groups" ng-if="group.idAchievement == resultsAchievement.id">
                           <p>{{group}}</p>
                       </div>
-                      <div ng-if="emptyGroupAchievement == resultsAchievement.id">No yet group created. You can create your group.
-                        <button ng-click="newGroupIdAchievement(resultsAchievement.id)" type="button" data-toggle="modal" data-target="#squarespaceModal" class="btn btn-warning text-uppercase btn-sm">
+                      <center><div ng-if="emptyGroupAchievement == resultsAchievement.id"><h1>No yet group created. </h1><br/>
+                        <button ng-click="newGroupIdAchievement(resultsAchievement.id)" type="button" data-toggle="modal" data-target="#squarespaceModal" class="btn btn-info text-uppercase btn-sm">
                           <span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span>
-                          Request
+                          Create my group
                         </button></span>
-                      </div>
+                      </div></center>
 										</td>
 
 									</tr>
