@@ -244,6 +244,52 @@ $(document).ready(function() {
 											</div>
                       <div ng-repeat="group in groups" ng-if="group.idAchievement == resultsAchievement.id">
                           <p>{{group}}</p>
+
+                                                <!-- DEBUT DE LA PRESENTATION DES GROUPES EXISTANTS -->
+                                                <div class="container bootstrap snippet">
+                                                    <div class="table-responsive">
+                                                    	<!-- PROJECT TABLE -->
+                                                    	<table class="table colored-header datatable project-list">
+                                                    		<thead>
+                                                    			<tr>
+                                                    				<th>Leader</th>
+                                                    				<th>Date Start</th>
+                                                    				<th>Spots Left</th>
+                                                    				<th>Rewards</th>
+                                                    				<th>Details</th>
+                                                    			</tr>
+                                                    		</thead>
+                                                    		<tbody>
+                                                    			<tr>
+                                                    				<td>
+                                                              <img src="http://bootdey.com/img/Content/avatar/avatar1.png" alt="Avatar" class="avatar img-circle"> <a href="#">Michael</a></td>
+                                                    				<td>18-05-2014</td>
+                                                    				<td>
+                                                              	<div class="progress">
+                              						                      <div class="progress-b" data-transitiongoal="95" aria-valuenow="95" style="width: 50%;">5 / 10
+                                                                </div>
+                              					                    </td>
+                                                    				<td>Gold</td>
+                                                    				<td>
+                                                            <span class="label label-default">DETAILS</span>
+                                                            <span class="label label-default">JOIN</span></td>
+                                                    		</tbody>
+                                                    	</table>
+                                                    	<!-- END PROJECT TABLE -->
+                                                      <button ng-click="newGroupIdAchievement(resultsAchievement.id)" type="button" data-toggle="modal" data-target="#squarespaceModal" class="btn btn-info text-uppercase btn-sm">
+                                                        <span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span>
+                                                        Create my group
+                                                      </button></span>
+                                                    </div>
+                                                </div>
+                                              </div>
+
+
+
+
+                                                <!-- FIN DE LA PRESENTATION DES GROUPES EXISTANTS -->
+
+
                       </div>
                       <center><div ng-if="emptyGroupAchievement == resultsAchievement.id"><h1>No yet group created. </h1><br/>
                         <button ng-click="newGroupIdAchievement(resultsAchievement.id)" type="button" data-toggle="modal" data-target="#squarespaceModal" class="btn btn-info text-uppercase btn-sm">

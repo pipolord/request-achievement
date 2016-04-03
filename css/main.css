@@ -299,3 +299,36 @@ body {
   -webkit-box-shadow: 0px 0px 2px #888;
   box-shadow: 0px 0px 2px #888;
 }
+
+/* GROUPES EXISTANTS CSS */
+.project-list > tbody > tr > td {
+  padding: 12px 8px;
+  font-size: 13px;
+  color: #555;
+}
+
+.project-list > tbody > tr > td .avatar {
+  width: 22px;
+  border: 1px solid #CCC;
+}
+.p-team img {
+    width: 35px;
+    height:35px;
+    border-radius: 4px;
+}
+
+.progress-b, .joing {
+  float: left;
+  line-height: 20px;
+  text-align: center;
+  background-image: none;
+  background-color: #41cac0;
+  border-color: #41cac0;
+  color: #FFFFFF;
+}
+
+.btn-follow {
+  color: #fff;
+  background-color: #27b6af;
+  border: 1px solid #27b6af;
+}
