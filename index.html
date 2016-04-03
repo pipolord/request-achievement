@@ -41,6 +41,9 @@ $(document).ready(function() {
   var positions = ["top","center","bottom"];
   var selected = Math.floor(Math.random()*3);
   document.getElementById('#navbar-custom').style.backgroundPosition = positions[selected];
+  var backgrounds = ["test2.jpg","test3.jpg","test7.jpg"];
+  var selectB = Math.floor(Math.random()*3);
+  document.getElementById('#navbar-custom').style.backgroundImage = "url(images/nav/"+backgrounds[selectB]+")";
 });
 
 </script>
@@ -93,6 +96,49 @@ $(document).ready(function() {
                                         <span class="glyphicon glyphicon-ok opa"></span>
                                         Damage
                                         <img class="iconopa" src="images/damage.png" alt="" />
+                                    </label>
+                              </div>
+                          </div>
+                          <!-- Section pour selectionner la langue -->
+                          <label for="exampleInputEmail1">Prefer to speak</label>
+                          <div class="form-group text-center">
+                              <div class="btn-group " data-toggle="buttons">
+                                    <label class="btn btn-default">
+                                        <input type="checkbox" autocomplete="off" checked>
+                                        <span class="glyphicon glyphicon-ok opa"></span>
+
+                                        <img class="iconopa country" src="images/language/gb.svg" alt="" />
+                                    </label>
+                                    <label class="btn btn-default">
+                                        <input type="checkbox" autocomplete="off">
+                                        <span class="glyphicon glyphicon-ok opa"></span>
+
+                                        <img class="iconopa country" src="images/language/fr.svg" alt="" />
+                                    </label>
+                                    <label class="btn btn-default">
+                                        <input type="checkbox" autocomplete="off">
+                                        <span class="glyphicon glyphicon-ok opa"></span>
+                                        <img class="iconopa country" src="images/language/de.svg" alt="" />
+                                    </label>
+                                    <label class="btn btn-default">
+                                        <input type="checkbox" autocomplete="off">
+                                        <span class="glyphicon glyphicon-ok opa"></span>
+                                        <img class="iconopa country" src="images/language/ES.svg" alt="" />
+                                    </label>
+                                    <label class="btn btn-default">
+                                        <input type="checkbox" autocomplete="off">
+                                        <span class="glyphicon glyphicon-ok opa"></span>
+                                        <img class="iconopa country" src="images/language/PT.svg" alt="" />
+                                    </label>
+                                    <label class="btn btn-default">
+                                        <input type="checkbox" autocomplete="off">
+                                        <span class="glyphicon glyphicon-ok opa"></span>
+                                        <img class="iconopa country" src="images/language/IT.svg" alt="" />
+                                    </label>
+                                    <label class="btn btn-default">
+                                        <input type="checkbox" autocomplete="off">
+                                        <span class="glyphicon glyphicon-ok opa"></span>
+                                        <img class="iconopa country" src="images/language/ru.svg" alt="" />
                                     </label>
                               </div>
                           </div>
@@ -189,12 +235,12 @@ $(document).ready(function() {
 										<td ng-click="getGroups(resultsAchievement.id)">
 											<div class="media">
 												<a href="#" rel=/achievement={{resultsAchievement.id}} class="pull-left">
-													<img src=http://media.blizzard.com/wow/icons/56/{{resultsAchievement.icon}}.jpg class="media-photo">
+													<img ng-if="resultsAchievement.icon!==undefined" ng-src="http://media.blizzard.com/wow/icons/56/{{resultsAchievement.icon}}.jpg" class="media-photo">
 												</a>
 												<div class="media-body">
                           <span class="media-meta pull-right">
 
-                            <button type="button" ng-click="getGroups(resultsAchievement.id)" class="btn btn-success text-uppercase btn-sm">
+                            <button type="button" ng-click="getGroups(resultsAchievement.id)" class="btn btn-default text-uppercase btn-sm btn-expand">
                               +
                             </button></span>
 													<h4 class="title">

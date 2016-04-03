@@ -149,8 +149,18 @@ body {
 }
 .table-filter .media-photo {
   /*  width: 35px; */
+
+  padding: 2px 2px;
+  display: inline-block;
+  -moz-border-radius: 100px;
+  -webkit-border-radius: 100px;
+  border-radius: 100px;
+  -moz-box-shadow: 0px 0px 2px #888;
+  -webkit-box-shadow: 0px 0px 2px #888;
+  box-shadow: 0px 0px 2px #888;
 }
 .table-filter .media-body {
+  padding-top: 10px;
     /*display: block; */
     /* Had to use this style to force the div to expand (wasn't necessary with my bootstrap version 3.3.6) */
 }
@@ -217,7 +227,7 @@ body {
     color:#eee;
 
     border-bottom:1px solid #eee;
-    background-image:url(../images/nav/test2.jpg);
+    background-image:url(../images/nav/test7.jpg);
     opacity: 2;
     background-repeat: no-repeat;
     background-position: center center;
@@ -243,7 +253,7 @@ body {
 
 .navbar-custom {
   color: #fff;
-  background-image: url('../images/nav/test7.jpg');
+  /* background-image: url('../images/nav/test7.jpg'); */
   background-repeat: repeat-x;
   opacity: 0.9;
   z-index:100;
@@ -272,4 +282,20 @@ body {
 .dropdown-menu>li>a {
   background-color: #fff;
   color:#DAA520;
+}
+
+/* Button Expand */
+
+.btn-expand {
+  background-color: #DAA520;
+}
+.country {
+  padding: 2px 2px;
+  display: inline-block;
+  -moz-border-radius: 100px;
+  -webkit-border-radius: 100px;
+  border-radius: 100px;
+  -moz-box-shadow: 0px 0px 2px #888;
+  -webkit-box-shadow: 0px 0px 2px #888;
+  box-shadow: 0px 0px 2px #888;
 }
