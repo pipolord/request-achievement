@@ -51,7 +51,7 @@ $(function () {
 });
 
 </script>
- 
+
   <!-- 3. Display the application -->
   <body>
     <div ng-app="achievement" >
@@ -140,7 +140,7 @@ $(function () {
             </div>
             </div>
           </div>
-				<nav class="navbar navbar-default" role="navigation">
+				<nav id="#navbar-custom" class="navbar navbar-custom" role="navigation">
 				    <div class="navbar-header">
 				        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
 				            <span class="sr-only">Toggle navigation</span>
@@ -203,10 +203,10 @@ $(function () {
                             <button type="button" data-toggle="modal" data-target="#squarespaceModal" ng-click="newGroupIdAchievement(resultsAchievement.id)" class="btn btn-success text-uppercase btn-sm">
                               <span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span>
                               Request
-                            </button></span>
-													<span class="media-meta pull-right">
+                            </button>
+
                             <button type="button" ng-click="getGroups(resultsAchievement.id)" class="btn btn-info text-uppercase btn-sm">
-                              <span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span>
+                              <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
                               Groups
                             </button></span>
 													<h4 class="title">
