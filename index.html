@@ -36,18 +36,11 @@ $(function () {
 	$('#datetimepicker1').datetimepicker();
   });
 </script>
-<script type="text/javascript">
-
+  <script type="text/javascript">
+$(document).ready(function() {
   var positions = ["top","center","bottom"];
-
   var selected = Math.floor(Math.random()*3);
-
-  console.log(selected);
-
-  $(document).ready(function() {
-
   document.getElementById('#navbar-custom').style.backgroundPosition = positions[selected];
-
 });
 
 </script>
@@ -193,7 +186,7 @@ $(function () {
 							<table class="table table-filter">
 								<tbody>
 									<tr data-status="pagado" ng-repeat="resultsAchievement in resultsAchievements">
-										<td>
+										<td ng-click="getGroups(resultsAchievement.id)">
 											<div class="media">
 												<a href="#" rel=/achievement={{resultsAchievement.id}} class="pull-left">
 													<img src=http://media.blizzard.com/wow/icons/56/{{resultsAchievement.icon}}.jpg class="media-photo">
