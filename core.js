@@ -3,7 +3,7 @@ var mongoose = require("mongoose");
 var path = require('path');
 var bodyParser = require('body-parser'); // Charge le middleware de gestion des paramÃƒÂ¨tres
 var urlencodedParser = bodyParser.urlencoded({ extended: false });
-var passport	= require('passport');
+var passport  = require('passport');
 var util = require('util');
 var https = require('https');
 
@@ -29,4 +29,5 @@ var options = {
 
 var server = https.createServer(options, app).listen(8080, function(){
       console.log("server started at port 8080");
-});
+-
+}); 

@@ -332,3 +332,9 @@ body {
   background-color: #27b6af;
   border: 1px solid #27b6af;
 }
+
+.battlenet-icon {
+
+  height: 18px;
+  width: 18px;
+}  
