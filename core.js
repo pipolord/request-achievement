@@ -13,7 +13,7 @@ var app = express();
 
 var cors = require('cors');
 app.use(cors());
-app.use(cors({ origin: 'null', credentials: true }));
+app.use(cors({ origin: 'http://localhost'}));
 app.use(passport.initialize());
 
 require('./routes/groupAchievementRoutes')(app);

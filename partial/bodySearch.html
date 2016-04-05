@@ -1,0 +1,92 @@
+<div class="col-md-8 col-md-offset-2">
+  <div class="panel panel-default">
+    <div class="panel-body">
+       <div class="col-md-12 ">
+        <img src="images/loader.gif" alt="Loader" id="loader">
+               <div id="custom-search-input">
+                    <div class="input-group col-md-12">
+                      <input type="text" class="form-control" placeholder="Search an Achievement !" ng-model="someVal" ng-minlength="3" ng-required="1" ng-change="seekAchievement()" ng-Trim="false"  />
+                    </div>
+               </div>
+            </div>
+
+      <div class="table-container" >
+        <table class="table table-filter">
+          <tbody>
+            <tr data-status="pagado" ng-repeat="resultsAchievement in resultsAchievements">
+              <td ng-click="getGroups(resultsAchievement.id)">
+                <div class="media">
+                  <a href="#" rel=/achievement={{resultsAchievement.id}} class="pull-left">
+                    <img ng-if="resultsAchievement.icon!==undefined" ng-src="http://media.blizzard.com/wow/icons/56/{{resultsAchievement.icon}}.jpg" class="media-photo">
+                  </a>
+                  <div class="media-body">
+                    <span class="media-meta pull-right">
+
+                      <button type="button" ng-click="getGroups(resultsAchievement.id)" class="btn btn-default text-uppercase btn-sm btn-expand">
+                        +
+                      </button></span>
+                    <h4 class="title">
+                      {{resultsAchievement.title}}
+                      <!-- <span class="pull-right pagado">2 groupes constitués</span> -->
+                    </h4>
+                    <p class="summary">{{resultsAchievement.description}}</p>
+                  </div>
+                </div>
+                <div ng-repeat="group in groups" ng-if="group.idAchievement == resultsAchievement.id">
+                    <p>{{group}}</p>
+
+                                          <!-- DEBUT DE LA PRESENTATION DES GROUPES EXISTANTS -->
+                                          <div class="container bootstrap snippet">
+                                              <div class="table-responsive">
+                                                <!-- PROJECT TABLE -->
+                                                <table class="table colored-header datatable project-list">
+                                                  <thead>
+                                                    <tr>
+                                                      <th>Leader</th>
+                                                      <th>Date Start</th>
+                                                      <th>Spots Left</th>
+                                                      <th>Rewards</th>
+                                                      <th>Details</th>
+                                                    </tr>
+                                                  </thead>
+                                                  <tbody>
+                                                    <tr>
+                                                      <td>
+                                                        <img src="http://bootdey.com/img/Content/avatar/avatar1.png" alt="Avatar" class="avatar img-circle"> <a href="#">Michael</a></td>
+                                                      <td>18-05-2014</td>
+                                                      <td>
+                                                          <div class="progress">
+                                                          <div class="progress-b" data-transitiongoal="95" aria-valuenow="95" style="width: 50%;">5 / 10
+                                                          </div>
+                                                      </td>
+                                                      <td>Gold</td>
+                                                      <td>
+                                                      <span class="label label-default">DETAILS</span>
+                                                      <span class="label label-default"><i class="fa fa-check"></i> JOIN</span></td>
+                                                  </tbody>
+                                                </table>
+                                                <!-- END PROJECT TABLE -->
+                                                <button ng-click="newGroupIdAchievement(resultsAchievement.id)" type="button" data-toggle="modal" data-target="#squarespaceModal" class="btn btn-info text-uppercase btn-sm">
+                                                  <span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span>
+                                                  Create my group
+                                                </button></span>
+                                              </div>
+                                          </div>
+                                        </div>
+                                          <!-- FIN DE LA PRESENTATION DES GROUPES EXISTANTS -->
+
+                </div>
+                <center><div ng-if="emptyGroupAchievement == resultsAchievement.id"><h1>No yet group created. </h1><br/>
+                  <button ng-click="newGroupIdAchievement(resultsAchievement.id)" type="button" data-toggle="modal" data-target="#squarespaceModal" class="btn btn-info text-uppercase btn-sm">
+                    <span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span>
+                    Create my group
+                  </button></span>
+                </div></center>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
