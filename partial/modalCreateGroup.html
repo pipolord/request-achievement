@@ -1,0 +1,125 @@
+<div class="modal-dialog" ng-controller="newGroupController">
+<div class="modal-content">
+  <div class="modal-header modal-header-info">
+    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+    <h3 class="modal-title modal-title-color" id="lineModalLabel">You need some help to realize this achievement ?</h3>
+  </div>
+  <div class="modal-body" ng-model="newGroup">
+          <!-- contenu de mon modal -->
+    <form>
+
+      <input hidden="true" type='text' ng-model="newGroup.idAchievement">
+              <!-- Section pour selectionner la date -->
+              <label for="selectdate">Select Date</label >
+                    <div class="form-group">
+                        <div class='input-group date' id='datetimepicker1' >
+                            <input type='text' class="form-control"  />
+                            <span class="input-group-addon" >
+                                <span class="glyphicon glyphicon-calendar"></span>
+                            </span>
+                        </div>
+                    </div>
+
+              <!-- Section pour selectionner le rôle -->
+              <label for="exampleInputEmail1">Select a rôle</label>
+              <div class="form-group text-center">
+                  <div class="btn-group " data-toggle="buttons">
+                        <label class="btn btn-primary">
+                            <input type="checkbox" autocomplete="off" checked>
+                            <span class="glyphicon glyphicon-ok opa"></span>
+                             Tank
+                            <img class="iconopa" src="images/tank.png" alt="" />
+                        </label>
+                        <label class="btn btn-success">
+                            <input type="checkbox" autocomplete="off">
+                            <span class="glyphicon glyphicon-ok opa"></span>
+                            Healer
+                            <img class="iconopa" src="images/healer.png" alt="" />
+                        </label>
+                        <label class="btn btn-danger">
+                            <input type="checkbox" autocomplete="off">
+                            <span class="glyphicon glyphicon-ok opa"></span>
+                            Damage
+                            <img class="iconopa" src="images/damage.png" alt="" />
+                        </label>
+                  </div>
+              </div>
+              <!-- Section pour selectionner la langue -->
+              <label for="exampleInputEmail1">Prefer to speak</label>
+              <div class="form-group text-center">
+                  <div class="btn-group " data-toggle="buttons">
+                        <label class="btn btn-default">
+                            <input type="checkbox" autocomplete="off" checked>
+                            <span class="glyphicon glyphicon-ok opa"></span>
+
+                            <img class="iconopa country" src="images/language/gb.svg" alt="" />
+                        </label>
+                        <label class="btn btn-default">
+                            <input type="checkbox" autocomplete="off">
+                            <span class="glyphicon glyphicon-ok opa"></span>
+
+                            <img class="iconopa country" src="images/language/fr.svg" alt="" />
+                        </label>
+                        <label class="btn btn-default">
+                            <input type="checkbox" autocomplete="off">
+                            <span class="glyphicon glyphicon-ok opa"></span>
+                            <img class="iconopa country" src="images/language/de.svg" alt="" />
+                        </label>
+                        <label class="btn btn-default">
+                            <input type="checkbox" autocomplete="off">
+                            <span class="glyphicon glyphicon-ok opa"></span>
+                            <img class="iconopa country" src="images/language/es.svg" alt="" />
+                        </label>
+                        <label class="btn btn-default">
+                            <input type="checkbox" autocomplete="off">
+                            <span class="glyphicon glyphicon-ok opa"></span>
+                            <img class="iconopa country" src="images/language/pt.svg" alt="" />
+                        </label>
+                        <label class="btn btn-default">
+                            <input type="checkbox" autocomplete="off">
+                            <span class="glyphicon glyphicon-ok opa"></span>
+                            <img class="iconopa country" src="images/language/it.svg" alt="" />
+                        </label>
+                        <label class="btn btn-default">
+                            <input type="checkbox" autocomplete="off">
+                            <span class="glyphicon glyphicon-ok opa"></span>
+                            <img class="iconopa country" src="images/language/ru.svg" alt="" />
+                        </label>
+                  </div>
+              </div>
+              <!-- Section pour la récompense -->
+
+              <div class="form-group">
+                    <label for="sel1">Specify the reward</label>
+                    <select class="form-control" id="sel1" ng-model="newGroup.reward">
+                      <option>Gold In game</option>
+                      <option>Mount</option>
+                      <option>Battle pet</option>
+                      <option>Other</option>
+                      <option>No, just a "thanks"</option>
+                    </select>
+              </div>
+              <!-- Section pour le vocal -->
+              <div class="form-group">
+                    <label for="sel1">Use vocal ?</label>
+                    <select class="form-control" id="sel1" ng-model="newGroup.vocal">
+                      <option>Skype</option>
+                      <option>Teamspeak</option>
+                      <option>Mumble</option>
+                      <option>Other</option>
+                      <option>No</option>
+                    </select>
+              </div>
+              <div class="form-group">
+                    <label for="comment">Comment :</label>
+                    <textarea class="form-control" rows="5" id="comment"  ng-model="newGroup.comments "></textarea>
+            </div>
+            </form>
+        </div><!-- Fin du contenu de mon modal -->
+            <!-- Footer de mon modal -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                <button type="button" ng-click="addGroup()" type="submit" class="btn btn-warning pull-right" data-dismiss="modal"><i class="glyphicon glyphicon-log-in"></i> Request !</button>
+            </div>
+</div>
+</div>

@@ -1,0 +1,49 @@
+<html>
+  <head>
+    <title>Request Achievement huuu</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="js/Achievement.js"></script>
+    <script src="bower_components/underscore/underscore.js"></script>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.css">
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <!-- Librarie JS WOW HEAD -->
+    <script type="text/javascript" src="http://wow.zamimg.com/widgets/power.js"></script><script>var wowhead_tooltips = { "colorlinks": true, "iconizelinks": true, "renamelinks": true }</script>
+
+    <!-- Bootstrap select -->
+    <link rel="stylesheet" href="bower_components/bootstrap-select/dist/css/bootstrap-select.css">
+    <script src="bower_components/bootstrap-select/dist/js/bootstrap-select.js"></script>
+
+    <!-- Bootstrap datePicker -->
+    <link rel="stylesheet" href="bower_components/bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css">
+    <script src="bower_components/moment/moment.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/js/bootstrap-datetimepicker.min.js"></script>
+    <!-- Font Awesome -->
+    <link href="bower_components/font-awesome/css/font-awesome.css" rel="stylesheet">
+  </head>
+  <!-- 3. Display the application -->
+  <body>
+    <div ng-app="achievement">
+      <div class="col-md-4">
+  <h1>Login</h1>
+  <div ng-show="error" class="alert alert-danger">{{errorMessage}}</div>
+  <form class="form" ng-submit="login()">
+    <div class="form-group">
+      <label>Username</label>
+      <input type="text" class="form-control" name="username" ng-model="loginForm.username" required>
+    </div>
+    <div class="form-group">
+      <label>Password</label>
+        <input type="password" class="form-control" name="password" ng-model="loginForm.password" required>
+      </div>
+      <div>
+        <button type="submit" class="btn btn-default" ng-disabled="disabled">Login</button>
+      </div>
+  </form>
+</div>
+    </div>
+  </body>
+</html>
