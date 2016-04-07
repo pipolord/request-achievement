@@ -20,8 +20,9 @@
             </ul>
         </li>
     </ul>
-    <ul class="nav navbar-nav pull-right" ng-controller="loginController">
-      <li class="active pull-right"> <a href="https://91.121.168.68:3001/auth/bnet"><img src="images/nav/bnet-logo.png" class="battlenet-icon"/>  Log with Battle net</a></li>
+    <ul class="nav navbar-nav pull-right" ng-controller="loginController" ng-model="user">
+      <li ng-hide="user.battletag" class="active pull-right"> <a href="https://91.121.168.68:3001/auth/bnet"><img src="images/nav/bnet-logo.png" class="battlenet-icon"/>  Log with Battle net</a></li>
+      <li ng-hide="!user.battletag" class="active pull-right"><a>{{user.battletag}}</a></li>
     </ul>
     <div class="col-sm-3 col-md-3 pull-right">
 
