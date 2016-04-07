@@ -11,6 +11,7 @@
     "bson": "^0.4.21",
     "bytes": "^2.2.0",
     "content-type": "^1.0.1",
+    "cookie-parser": "^1.4.1",
     "core-util-is": "^1.0.2",
     "cors": "^2.7.1",
     "debug": "^2.2.0",
