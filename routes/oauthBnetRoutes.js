@@ -61,6 +61,7 @@ module.exports = function(passport, app){
 
   app.get('/', function(req, res) {
     if(req.isAuthenticated()) {
+      console.log("HERE");
       var output = '<h1>Express OAuth Test</h1>' + req.user.id + '<br>';
       if(req.user.battletag) {
         output += req.user.battletag + '<br>';
