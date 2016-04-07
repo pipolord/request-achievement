@@ -91,10 +91,10 @@ app.use(function(req, res, next) {
   app.get('/user/', function(req, res) {
     if(req.isAuthenticated()) {
       res.send(req.user);
-      next();
+      res.end();
     }
     res.send({});
-    next();
+    res.end();
   });
 
   app.get('/logout', function(req, res) {
