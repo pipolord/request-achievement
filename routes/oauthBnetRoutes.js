@@ -74,6 +74,11 @@ module.exports = function(passport, app){
     }
   });
 
+  app.get('/user/', function(req, res) {
+    console.log(req.isAuthenticated());
+    console.log(req.user);
+  });
+
   app.get('/logout', function(req, res) {
     req.logout();
     res.redirect('/');
