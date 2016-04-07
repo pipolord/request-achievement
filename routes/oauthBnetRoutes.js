@@ -90,9 +90,9 @@ app.use(function(req, res, next) {
 
   app.get('/user/', function(req, res) {
     if(req.isAuthenticated()) {
-      res.json(req.user);
+      res.end(req.user);
     }
-    res.json({});
+    res.end({});
   });
 
   app.get('/logout', function(req, res) {
