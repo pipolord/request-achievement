@@ -90,7 +90,7 @@ app.use(function(req, res, next) {
 
   app.get('/user/', function(req, res) {
     if(req.isAuthenticated()) {
-      return req.user();
+      return req.user;
     }
     return "";
   });
