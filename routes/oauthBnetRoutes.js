@@ -21,7 +21,7 @@ module.exports = function(passport, app){
       { clientID: BNET_ID,
         clientSecret: BNET_SECRET,
         scope: "wow.profile sc2.profile",
-        callbackURL: "https://91.121.168.68:3000/auth/bnet/callbacknet/callback" },
+        callbackURL: "https://91.121.168.68:3001/auth/bnet/callbacknet/callback" },
       function(accessToken, refreshToken, profile, done) {
         process.nextTick(function () {
           return done(null, profile);
