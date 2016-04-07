@@ -46,18 +46,17 @@ module.exports = function(passport, app){
   app.get('/auth/github/callback',
           passport.authenticate('github', { failureRedirect: '/' }),
           function(req, res){
-            res.redirect('/');
           });
 
   app.get('/auth/bnet',
           passport.authenticate('bnet'), function(req, res) {
-
           });
 
   app.get('/auth/bnet/callbacknet/callback',
           passport.authenticate('bnet', { failureRedirect: '/' }),
           function(req, res){
-            res.redirect('/');
+            //Aremplacer + tard
+            res.redirect('http://localhost/request-achievement/');
           });
 
   app.get('/', function(req, res) {
