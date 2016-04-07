@@ -89,8 +89,10 @@ app.use(function(req, res, next) {
   });
 
   app.get('/user/', function(req, res) {
-    console.log(req.isAuthenticated());
-    console.log(req.user);
+    if(req.isAuthenticated()) {
+      return req.user();
+    }
+    return "";
   });
 
   app.get('/logout', function(req, res) {
