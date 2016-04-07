@@ -6,7 +6,6 @@ var urlencodedParser = bodyParser.urlencoded({ extended: false });
 var passport  = require('passport');
 var util = require('util');
 var https = require('https');
-var promise = require("any-promise/register");
 
 mongoose.connect('mongodb://192.168.1.13/requestAchievement');
 
@@ -31,4 +30,3 @@ var options = {
 var server = https.createServer(options, app).listen(8080, function(){
       console.log("server started at port 8080");
 });
-
