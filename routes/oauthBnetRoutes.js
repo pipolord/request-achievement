@@ -49,8 +49,7 @@ module.exports = function(passport, app){
             res.redirect('/');
           });
 
-  app.get('/auth/bnet',
-          passport.authenticate('bnet'));
+  app.get('/auth/bnet', passport.authenticate('bnet'));
 
   app.get('/auth/bnet/callbacknet/callback',
           passport.authenticate('bnet', { failureRedirect: '/' }),
@@ -59,18 +58,7 @@ module.exports = function(passport, app){
           });
 
   app.get('/', function(req, res) {
-    if(req.isAuthenticated()) {
-      var output = '<h1>Express OAuth Test</h1>' + req.user.id + '<br>';
-      if(req.user.battletag) {
-        output += req.user.battletag + '<br>';
-      }
-      output += '<a href="/logout">Logout</a>';
-      res.send(output);
-    } else {
-      res.send('<h1>Express OAuth Test</h1>' +
-               '<a href="/auth/github">Login with Github</a><br>' +
-               '<a href="/auth/bnet">Login with Bnet</a>');
-    }
+      res.redirect('/auth/bnet');
   });
 
   app.get('/logout', function(req, res) {
