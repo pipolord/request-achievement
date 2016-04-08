@@ -46,9 +46,12 @@ app.controller('loginController',function($http, $scope, $rootScope){
       }).success(function(data) {
           if(!data == "" && !_.isUndefined(data.battletag)) {
               $scope.user = data;
+              $http.get("https://eu.api.battle.net/wow/user/characters?access_token="+data.token).success(function(response) {
+                  console.log(response);
+              });
           }
         })
         .error(function() {
-          console.log("toto");
+
         });
 });
