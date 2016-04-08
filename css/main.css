@@ -1,14 +1,15 @@
+/* IMPORT DE LA POLICE DU LOGO */
 @import url(https://fonts.googleapis.com/css?family=Julius+Sans+One);
 
+/*LOGO */
 .title-achievement {
     font-family: 'Julius Sans One', sans-serif;
     font-weight: bold;
 }
 .navbar-brand {
 
-
 }
-
+/* BARRE DE RECHERCHE */
 #custom-search-input{
     padding: 3px;
     background-color: #fff;
@@ -39,9 +40,7 @@
     font-size: 23px;
 }
 
-/*    --------------------------------------------------
-    :: General
-    -------------------------------------------------- */
+/* GENERAL */
 body {
     font-family: 'Open Sans', sans-serif;
     color: #353535;
@@ -90,63 +89,7 @@ body {
 .table-filter tbody tr.selected td {
     background-color: #eee;
 }
-.table-filter tr td:first-child {
-    width: 38px;
-}
-.table-filter tr td:nth-child(2) {
-    width: 35px;
-}
-.ckbox {
-    position: relative;
-}
-.ckbox input[type="checkbox"] {
-    opacity: 0;
-}
-.ckbox label {
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-}
-.ckbox label:before {
-    content: '';
-    top: 1px;
-    left: 0;
-    width: 18px;
-    height: 18px;
-    display: block;
-    position: absolute;
-    border-radius: 2px;
-    border: 1px solid #bbb;
-    background-color: #fff;
-}
-.ckbox input[type="checkbox"]:checked + label:before {
-    border-color: #2BBCDE;
-    background-color: #2BBCDE;
-}
-.ckbox input[type="checkbox"]:checked + label:after {
-    top: 3px;
-    left: 3.5px;
-    content: '\e013';
-    color: #fff;
-    font-size: 11px;
-    font-family: 'Glyphicons Halflings';
-    position: absolute;
-}
-.table-filter .star {
-    color: #ccc;
-    text-align: center;
-    display: block;
-}
-.table-filter .star.star-checked {
-    color: #F0AD4E;
-}
-.table-filter .star:hover {
-    color: #ccc;
-}
-.table-filter .star.star-checked:hover {
-    color: #F0AD4E;
-}
+
 .table-filter .media-photo {
   /*  width: 35px; */
 
@@ -222,7 +165,6 @@ body {
 }
 
 
-
 .modal-header-info {
     color:#eee;
 
@@ -269,25 +211,25 @@ body {
 }
 
 .navbar-custom .navbar-nav > li > a:hover, .navbar-custom .navbar-nav > li > a:focus {
-    background-color: #DAA520;
+    background-color: #ffa500;
     opacity: 1;
     color: #Fff;
 }
 .nav .open>a, .nav .open>a:focus, .nav .open>a:hover {
     background-color: #fff;
-    color:#DAA520;
+    color:#ffa500;
 }
 
 
 .dropdown-menu>li>a {
   background-color: #fff;
-  color:#DAA520;
+  color:#ffa500;
 }
 
 /* Button Expand */
 
 .btn-expand {
-  background-color: #DAA520;
+  background-color: #ffa500;
 }
 .country {
   padding: 2px 2px;
@@ -301,15 +243,58 @@ body {
 }
 
 /* GROUPES EXISTANTS CSS */
+.project-list {
+  background: #FFFFFF;
+  -webkit-box-shadow: 1px 1px 2px 0 #CCCCCC;
+  -moz-box-shadow: 1px 1px 2px 0 #CCCCCC;
+  -o-box-shadow: 1px 1px 2px 0 #CCCCCC;
+  -ms-box-shadow: 1px 1px 2px 0 #CCCCCC;
+  box-shadow: 1px 1px 2px 0 #CCCCCC;
+  margin-bottom: 16px;
+  -webikt-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+    margin-top: 10px;
+    border: 1px solid #eee;
+
+}
+
+.user-subhead {
+    font-size: 0.875em;
+    font-style: italic;
+}
+ .user-link {
+    display: block;
+    font-size: 1.25em;
+    padding-top: 3px;
+    margin-left: 60px;
+}
+
+.project-list tbody td>img {
+    position: relative;
+    max-width: 50px;
+    float: left;
+    margin-right: 15px;
+}
 .project-list > tbody > tr > td {
   padding: 12px 8px;
   font-size: 13px;
   color: #555;
+
+}
+
+.project-list > tbody > tr:hover {
+  color: #000;
+    background-color: #fff;
+}
+.project-list > thead > tr:hover {
+  color: #000;
+    background-color: #fff;
 }
 
 .project-list > tbody > tr > td .avatar {
   width: 22px;
-  border: 1px solid #CCC;
+  border: 1px solid #ffa500;
 }
 .p-team img {
     width: 35px;
@@ -322,8 +307,8 @@ body {
   line-height: 20px;
   text-align: center;
   background-image: none;
-  background-color: #41cac0;
-  border-color: #41cac0;
+  background-color: #ffa500;
+  border-color: #ffa500;
   color: #FFFFFF;
 }
 
@@ -337,4 +322,4 @@ body {
 
   height: 18px;
   width: 18px;
-}  
+}

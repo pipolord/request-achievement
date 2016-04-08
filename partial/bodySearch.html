@@ -31,14 +31,11 @@
                     <p class="summary">{{resultsAchievement.description}}</p>
                   </div>
                 </div>
-                <div ng-repeat="group in groups" ng-if="group.idAchievement == resultsAchievement.id">
-                    <p>{{group}}</p>
+                <div ng-if="achievementCliked == resultsAchievement.id">
 
                                           <!-- DEBUT DE LA PRESENTATION DES GROUPES EXISTANTS -->
-                                          <div class="container bootstrap snippet">
-                                              <div class="table-responsive">
                                                 <!-- PROJECT TABLE -->
-                                                <table class="table colored-header datatable project-list">
+                                                <table class="table colored-header datatable project-list"  >
                                                   <thead>
                                                     <tr>
                                                       <th>Leader</th>
@@ -48,39 +45,45 @@
                                                       <th>Details</th>
                                                     </tr>
                                                   </thead>
-                                                  <tbody>
-                                                    <tr>
+                                                  <tbody  >
+                                                    <tr ng-repeat="group in groups" ng-if="group.idAchievement == resultsAchievement.id">
                                                       <td>
-                                                        <img src="http://bootdey.com/img/Content/avatar/avatar1.png" alt="Avatar" class="avatar img-circle"> <a href="#">Michael</a></td>
-                                                      <td>18-05-2014</td>
+                                                        <img src="http://bootdey.com/img/Content/user_1.jpg" alt="">
+                                                         <a href="#" class="user-link">Full name 1</a>
+                                                        <span class="user-subhead">Member</span>
+                                                      </td>
+                                                      <td>{{group.dateCreate}}</td>
                                                       <td>
                                                           <div class="progress">
                                                           <div class="progress-b" data-transitiongoal="95" aria-valuenow="95" style="width: 50%;">5 / 10
                                                           </div>
                                                       </td>
-                                                      <td>Gold</td>
+                                                      <td>{{group.reward}}</td>
                                                       <td>
                                                       <span class="label label-default">DETAILS</span>
-                                                      <span class="label label-default"><i class="fa fa-check"></i> JOIN</span></td>
+                                                      <span class="label label-default"><i class="fa fa-check"></i> JOIN</span>
+
+                                                      </td>
+                                                    </tr>
                                                   </tbody>
                                                 </table>
                                                 <!-- END PROJECT TABLE -->
+                                                <div class="text-center">
                                                 <button ng-click="newGroupIdAchievement(resultsAchievement.id)" type="button" data-toggle="modal" data-target="#squarespaceModal" class="btn btn-info text-uppercase btn-sm">
                                                   <span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span>
-                                                  Create my group
+                                                  Create my own group
                                                 </button></span>
                                               </div>
-                                          </div>
-                                        </div>
+                                              </div>
                                           <!-- FIN DE LA PRESENTATION DES GROUPES EXISTANTS -->
 
                 </div>
-                <center><div ng-if="emptyGroupAchievement == resultsAchievement.id"><h1>No yet group created. </h1><br/>
+                <div ng-if="emptyGroupAchievement == resultsAchievement.id" class="text-center"><h1>No yet group created. </h1><br/>
                   <button ng-click="newGroupIdAchievement(resultsAchievement.id)" type="button" data-toggle="modal" data-target="#squarespaceModal" class="btn btn-info text-uppercase btn-sm">
                     <span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span>
                     Create my group
                   </button></span>
-                </div></center>
+                </div>
               </td>
             </tr>
           </tbody>
