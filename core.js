@@ -16,8 +16,20 @@ app.use(cors());
 app.use(cors({ origin: '*'}));
 app.use(passport.initialize());
 
+var userSchema = new mongoose.Schema({
+  idBnet     : Number,
+  provider   : String,
+  battletag  : String,
+  token      : String,
+  characters : [],
+  defaultcharacter : { type: Number, default: 0 },
+});
+
+var Users = mongoose.model('users', userSchema);
+
+require('./routes/userRoutes')(app, Users);
 require('./routes/groupAchievementRoutes')(app);
-require('./routes/oauthBnetRoutes')(passport, app);
+require('./routes/oauthBnetRoutes')(passport, app, Users);
 
 var fs = require('fs');
 var options = {

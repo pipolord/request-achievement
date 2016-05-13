@@ -5,6 +5,12 @@
 .title-achievement {
     font-family: 'Julius Sans One', sans-serif;
     font-weight: bold;
+    margin-top:-1%;
+}
+
+.title-connexion {
+    font-family: 'Julius Sans One', sans-serif;
+    font-weight: bold;
 }
 .navbar-brand {
 
@@ -157,11 +163,15 @@ body {
   height: 24px;
   width: 24px;
 }
+.iconuser {
+  margin-right:: 5px
+  height: 30px;
+  width: 30px;
+}
 
 .aicon {
-
-  width: 28px;
-  height:auto;9
+  width: 15%;
+  height:auto;
 }
 
 
@@ -320,6 +330,6 @@ body {
 
 .battlenet-icon {
 
-  height: 18px;
-  width: 18px;
+  height: 25px;
+  width: 25px;
 }

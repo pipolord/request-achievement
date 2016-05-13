@@ -9,20 +9,19 @@
     <a class="navbar-brand title-achievement" href="#"><span class=""><img class="aicon" src="images/Achievement_icon.png" alt="" /></span> Request Achievement</a>
 </div>
 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-    <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Account</a></li>
-        <li><a href="#">Groups</a></li>
-        <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">About <b class="caret"></b></a>
-            <ul class="dropdown-menu">
-                <li><a href="#">Getting Started</a></li>
-                <li><a href="#">Give a tip !</a></li>
-            </ul>
-        </li>
-    </ul>
     <ul class="nav navbar-nav pull-right" ng-controller="loginController" ng-model="user">
-      <li ng-hide="user.battletag" class="active pull-right"> <a href="https://91.121.168.68:3001/auth/bnet"><img src="images/nav/bnet-logo.png" class="battlenet-icon"/>  Log with Battle net</a></li>
-      <li ng-hide="!user.battletag" class="active pull-right"><a>{{user.battletag}}</a></li>
+                                                                    <!-- MODIFIER -->
+      <li ng-hide="user.battletag" class="active pull-right title-connexion"> <a href="https://localhost:8081/auth/bnet"><img src="images/nav/bnet-logo.png" class="battlenet-icon"/>  Log with Battle net</a></li>
+      <li ng-hide="!user.battletag" class="dropdown" class="active pull-right">
+          <a href="#" class="dropdown-toggle title-connexion" data-toggle="dropdown" >  <img class="iconuser country" ng-src="http://eu.battle.net/static-render/eu/{{user.characters[user.defaultcharacter].thumbnail}}" alt="" />{{user.characters[user.defaultcharacter].name}}<b class="caret"></b></a>
+          <ul class="dropdown-menu  dropdown-menu-right">
+              <li ng-click="getCharacterFromUser(user)"><a href="#" data-toggle="modal" data-target="#charactersModal"><i class="fa fa-male fa-1x"></i> Change character</a></li>
+              <li><a href="#"><i class="fa fa-users fa-1x"></i> My Groups</a></li>
+              <li class="divider"></li>
+                <!-- MODIFIER -->
+              <li><a href="https://localhost:8081/logout"><i class="fa fa-sign-out fa-1x"></i> Logout</a></li>
+          </ul>
+      </li>
     </ul>
     <div class="col-sm-3 col-md-3 pull-right">
 
